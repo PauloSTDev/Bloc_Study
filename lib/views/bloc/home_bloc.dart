@@ -27,7 +27,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       Duration(
         seconds: 3,
       ),
-          () => <String>[
+      () => <String>[
         'Item 1',
         'Item 1',
         'Item 1',
@@ -55,7 +55,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         Duration(
           seconds: 3,
         ),
-            () => HomeStateEmptyList());
+        () => HomeStateEmptyList());
   }
 
   Future<HomeState> _fetchListWithError() async {
@@ -63,6 +63,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         Duration(
           seconds: 3,
         ),
-            () => HomeErrorState('Não foi possível carregar os dados.'));
+        () => HomeErrorState('Não foi possível carregar os dados.'));
   }
 }
