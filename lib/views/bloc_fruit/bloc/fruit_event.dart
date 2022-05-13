@@ -24,3 +24,11 @@ class RemoveFruit extends FruitEvent {
   @override
   List<Object> get props => [fruit];
 }
+
+class ClearFruit extends FruitEvent {
+  final Fruit fruit;
+  const ClearFruit(this.fruit);
+
+  @override
+  List<Object> get props => [];
+}

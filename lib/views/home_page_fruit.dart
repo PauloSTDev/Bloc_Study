@@ -94,6 +94,14 @@ class HomePageFruit extends StatelessWidget {
               context.read<FruitBloc>().add(RemoveFruit(Fruit.Fruits[1]));
             },
           ),
+          const SizedBox(height: 50),
+          FloatingActionButton(
+            child: const Text("0", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),),
+            backgroundColor: Colors.green,
+            onPressed: (){
+              context.read<FruitBloc>().add(ClearFruit(Fruit.Fruits[1]));
+            },
+          ),
 
         ],
       ),
