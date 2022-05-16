@@ -33,13 +33,15 @@ class HomePageFruit extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height /1.5,
+                    height: MediaQuery.of(context).size.height / 1.5,
                     width: MediaQuery.of(context).size.width,
                     child: Stack(
                       alignment: Alignment.center,
                       clipBehavior: Clip.none,
                       children: [
-                        for(int index = 0; index < state.fruits.length; index++)
+                        for (int index = 0;
+                            index < state.fruits.length;
+                            index++)
                           Positioned(
                             left: Random().nextInt(250).toDouble(),
                             top: Random().nextInt(400).toDouble(),
@@ -61,20 +63,20 @@ class HomePageFruit extends StatelessWidget {
         ),
       ),
       floatingActionButton: Column(
-         mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
           FloatingActionButton(
             child: const Icon(Icons.add, color: Colors.black),
             backgroundColor: Colors.green,
-            onPressed: (){
-            context.read<FruitBloc>().add(AddFruit(Fruit.Fruits[0]));
+            onPressed: () {
+              context.read<FruitBloc>().add(AddFruit(Fruit.Fruits[0]));
             },
           ),
           const SizedBox(height: 10),
           FloatingActionButton(
             child: const Icon(Icons.remove, color: Colors.black),
             backgroundColor: Colors.green,
-            onPressed: (){
+            onPressed: () {
               context.read<FruitBloc>().add(RemoveFruit(Fruit.Fruits[0]));
             },
           ),
@@ -82,7 +84,7 @@ class HomePageFruit extends StatelessWidget {
           FloatingActionButton(
             child: const Icon(Icons.add_circle, color: Colors.black),
             backgroundColor: Colors.green,
-            onPressed: (){
+            onPressed: () {
               context.read<FruitBloc>().add(AddFruit(Fruit.Fruits[1]));
             },
           ),
@@ -90,19 +92,10 @@ class HomePageFruit extends StatelessWidget {
           FloatingActionButton(
             child: const Icon(Icons.remove_circle, color: Colors.black),
             backgroundColor: Colors.green,
-            onPressed: (){
+            onPressed: () {
               context.read<FruitBloc>().add(RemoveFruit(Fruit.Fruits[1]));
             },
           ),
-          const SizedBox(height: 50),
-          FloatingActionButton(
-            child: const Text("0", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),),
-            backgroundColor: Colors.green,
-            onPressed: (){
-              context.read<FruitBloc>().add(ClearFruit(Fruit.Fruits[1]));
-            },
-          ),
-
         ],
       ),
     );

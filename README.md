@@ -1,7 +1,6 @@
 # bloc_study
 
-Projeto de estudos do package Bloc, State Management
+Projeto de estudos do package BLoC - Business Logic Object Components, State Management
 
-## Getting Started
-
+https://balta.io/blog/flutter-bloc-implementacao-basica
 

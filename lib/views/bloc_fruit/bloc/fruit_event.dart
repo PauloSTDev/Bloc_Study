@@ -30,5 +30,5 @@ class ClearFruit extends FruitEvent {
   const ClearFruit(this.fruit);
 
   @override
-  List<Object> get props => [];
+  List<Object> get props => [fruit];
 }

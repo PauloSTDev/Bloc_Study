@@ -8,7 +8,7 @@ part 'fruit_state.dart';
 class FruitBloc extends Bloc<FruitEvent, FruitState> {
   FruitBloc() : super(FruitInitial()) {
     on<LoadFruitCounter>((event, emit) async {
-      await Future<void>.delayed(Duration(seconds: 5));
+      await Future<void>.delayed(Duration(seconds: 3));
       emit(const FruitLoaded(<Fruit>[]));
     });
     on<AddFruit>((event, emit) {
@@ -24,6 +24,13 @@ class FruitBloc extends Bloc<FruitEvent, FruitState> {
 
         emit(FruitLoaded(List.from(state.fruits)..remove(event.fruit)));
       }
-    });
+    },);
+
+    on<ClearFruit>((event, emit) {
+      if (state is FruitLoaded) {
+        final state = this.state as FruitLoaded;
+        emit(FruitLoaded(List.from(state.fruits)..remove(event.fruit)));
+      }
+    },);
   }
 }
