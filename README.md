@@ -1,6 +1,6 @@
 # Bloc_Study
 
-BLoC package study project - Business Logic Object Components, State Management
+## BLoC package study project - Business Logic Object Components, State Management
 
 <div align="left">
 <img alt="flutter"
